@@ -13,6 +13,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -30,7 +31,8 @@ fun ActivitasPertama(modifier: Modifier = Modifier) {
             text = stringResource(R.string.prodi),
             fontSize = 35.sp,
             fontWeight = FontWeight.Bold
-        )`n        Text(
+        )
+        Text(
             text = stringResource(R.string.univ),
             fontSize = 22.sp
         )
@@ -56,6 +58,21 @@ fun ActivitasPertama(modifier: Modifier = Modifier) {
  .size(80.dp)
  .clip(CircleShape)
  )
+ Spacer(modifier = Modifier.width(16.dp))
+ Column {
+ Text(
+ text = stringResource(R.string.nama),
+ fontSize = 20.sp,
+ fontWeight = FontWeight.Bold,
+ fontStyle = FontStyle.Italic,
+ color = Color.White
+ )
+ Text(
+ text = stringResource(R.string.alamat),
+ fontSize = 16.sp,
+ color = Color.White
+ )
+ }
  }
  }
  }
