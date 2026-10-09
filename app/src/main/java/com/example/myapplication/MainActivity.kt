@@ -17,6 +17,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    // Menjalankan ActivitasPertama sebagai tampilan utama aplikasi
                     ActivitasPertama(modifier = Modifier.padding(innerPadding))
                 }
             }
