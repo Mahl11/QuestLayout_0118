@@ -15,6 +15,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.myapplication.R
@@ -27,16 +28,22 @@ fun ActivitasPertama(modifier: Modifier = Modifier) {
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        // 1. Prodi
         Text(
             text = stringResource(R.string.prodi),
             fontSize = 35.sp,
             fontWeight = FontWeight.Bold
         )
+
+        // 2. Universitas
         Text(
             text = stringResource(R.string.univ),
             fontSize = 22.sp
         )
+
         Spacer(modifier = Modifier.height(25.dp))
+
+        // 3. Card Profil
         Card(
             modifier = Modifier
                 .fillMaxWidth(1f)
@@ -53,27 +60,47 @@ fun ActivitasPertama(modifier: Modifier = Modifier) {
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.logo_umy),
-                    contentDescription = " \Logo\\,
- modifier = Modifier
- .size(80.dp)
- .clip(CircleShape)
- )
- Spacer(modifier = Modifier.width(16.dp))
- Column {
- Text(
- text = stringResource(R.string.nama),
- fontSize = 20.sp,
- fontWeight = FontWeight.Bold,
- fontStyle = FontStyle.Italic,
- color = Color.White
- )
- Text(
- text = stringResource(R.string.alamat),
- fontSize = 16.sp,
- color = Color.White
- )
- }
- }
- }
- }
+                    contentDescription = "Logo",
+                    modifier = Modifier
+                        .size(80.dp)
+                        .clip(CircleShape)
+                )
+
+                Spacer(modifier = Modifier.width(16.dp))
+
+                Column {
+                    Text(
+                        text = stringResource(R.string.nama),
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Bold,
+                        fontStyle = FontStyle.Italic,
+                        color = Color.White
+                    )
+                    Text(
+                        text = stringResource(R.string.alamat),
+                        fontSize = 16.sp,
+                        color = Color.White
+                    )
+                }
+            }
+        }
+
+        // Pendorong agar teks copyright berada di posisi paling bawah
+        Spacer(modifier = Modifier.weight(1f))
+
+        // 4. Copyright Footer
+        Text(
+            text = stringResource(R.string.copy),
+            fontSize = 12.sp,
+            color = Color.Gray,
+            modifier = Modifier.padding(bottom = 16.dp)
+        )
+    }
+}
+
+// 5. Preview Tampilan
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun ActivitasPertamaPreview() {
+    ActivitasPertama()
 }
