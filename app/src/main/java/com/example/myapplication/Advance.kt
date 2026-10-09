@@ -64,3 +64,9 @@ fun AdvanceLayout(modifier: Modifier = Modifier) {
  }
  }
 }
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun AdvanceLayoutPreview() {
+    AdvanceLayout()
+}
