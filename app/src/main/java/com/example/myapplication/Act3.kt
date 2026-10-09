@@ -19,6 +19,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.myapplication.R
+import androidx.compose.ui.text.font.FontFamily
+
 
 @Composable
 fun ActivitasPertama(modifier: Modifier = Modifier) {
@@ -52,37 +54,31 @@ fun ActivitasPertama(modifier: Modifier = Modifier) {
                 containerColor = Color.DarkGray
             )
         ) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(12.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
+            Row() { //row nya dalam card
+                val gambar = painterResource(R.drawable.logo_umy)
                 Image(
-                    painter = painterResource(id = R.drawable.logo_umy),
-                    contentDescription = "Logo",
-                    modifier = Modifier
-                        .size(80.dp)
-                        .clip(CircleShape)
+                    painter = gambar,
+                    contentDescription = null,
+                    modifier = Modifier.size(100.dp).padding(5.dp)
                 )
-
-                Spacer(modifier = Modifier.width(16.dp))
-
-                Column {
+                Spacer(modifier = Modifier.width(30.dp))
+                Column() {
                     Text(
                         text = stringResource(R.string.nama),
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold,
-                        fontStyle = FontStyle.Italic,
-                        color = Color.White
+                        fontSize = 30.sp,
+                        fontFamily = FontFamily.Cursive,
+                        color = Color.White,
+                        modifier = Modifier.padding(top = 15.dp)
                     )
                     Text(
                         text = stringResource(R.string.alamat),
-                        fontSize = 16.sp,
-                        color = Color.White
+                        fontSize = 20.sp,
+                        color = Color.Yellow,
+                        modifier = Modifier.padding(top = 10.dp)
                     )
                 }
             }
+
         }
 
         // Pendorong agar teks copyright berada di posisi paling bawah
