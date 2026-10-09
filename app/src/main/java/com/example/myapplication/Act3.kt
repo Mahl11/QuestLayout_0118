@@ -81,16 +81,18 @@ fun ActivitasPertama(modifier: Modifier = Modifier) {
 
         }
 
-        // Pendorong agar teks copyright berada di posisi paling bawah
-        Spacer(modifier = Modifier.weight(1f))
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+        ) {
+            Text(
+                text = stringResource(R.string.copy),
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .padding(bottom = 50.dp)
+            )
+        }
 
-        // 4. Copyright Footer
-        Text(
-            text = stringResource(R.string.copy),
-            fontSize = 12.sp,
-            color = Color.Gray,
-            modifier = Modifier.padding(bottom = 16.dp)
-        )
     }
 }
 
